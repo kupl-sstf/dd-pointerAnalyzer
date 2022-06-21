@@ -1,5 +1,4 @@
 # dd-pointerAnalyzer
-# OBJ2CFA
 This is our data-driven pointer analysis implemented on Doop java pointer analyzer. It contains our data-driven analysis strategies ([graphick](https://dl.acm.org/doi/10.1145/3428247) and [1callH+SL](https://dl.acm.org/doi/abs/10.1145/3498720)) that make the analysis precise and scalable. The details of the learned strategies are discussed in the papers. You can analyze java programs (.jar files) with our data-driven pointer analyzer.
 
 
@@ -113,12 +112,13 @@ $ ./run.py <analysis> -main <Main> <pgm.jar>
 ```
 ci, 2obj, 1callH+SL, graphick.
 ```
+ci and 2obj correspond to the conventional context insensitive and 2-object-sensitive analysis. 1callH+SL and graphick correspond to our data-driven analysis heuristics.
+
+
   
 <pgm.jar> corresponds to the .jar file to be analzed and <Main> corresponds to the main (entry) method. For example, the following command analyzes the program luindex.jar with our data-driven analysis strategy 1callH+SL where the main method of the program is dacapo.luindex.Main:
 ```
 $ ./run.py 1callH+SL -main dacapo.luindex.Main example_pgms/luindex.jar
 ```
-  
-  
-  
+
  
