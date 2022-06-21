@@ -99,7 +99,7 @@ The results say that
 
 - It analyzed the program luindex
 - The analysis took 16.30s
-- The results for the clients (#var points-to, #may-fail casts, #polymorphic-calls, #reachable-methods, #call-graph-edges)
+- The results over the clients (#var points-to, #may-fail casts, #polymorphic-calls, #reachable-methods, #call-graph-edges)
 
 ### Running Doop
 First, move to `doop/` foler. The command below runs Doop:
