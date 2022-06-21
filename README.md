@@ -112,7 +112,7 @@ $ ./run.py <analysis> -main <Main> <pgm.jar>
 ```
 ci, 2obj, 1callH+SL, graphick.
 ```
-ci and 2obj correspond to the conventional context insensitive and 2-object-sensitive analysis. 1callH+SL and graphick correspond to our data-driven analysis heuristics.
+ci and 2obj correspond to the conventional context insensitive and 2-object-sensitive analysis. [1callH+SL](https://dl.acm.org/doi/abs/10.1145/3498720) and [graphick](https://dl.acm.org/doi/10.1145/3428247) correspond to our data-driven analysis heuristics.
 
 
   
