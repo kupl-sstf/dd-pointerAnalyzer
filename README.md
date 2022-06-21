@@ -8,7 +8,6 @@ This is our data-driven pointer analysis implemented on Doop java pointer analyz
 * [Getting-Started Guide](#Getting-Started-Guide)
   * [Requirements](#Requirements)
   * [Vagrant Box](#Vagrant-Box)
-  * [Setup Instruction](#Setup-Instruction)
   * [Verifying Installation](#Verifying-Installation)
 * [Artifact](#Artfact)
 
