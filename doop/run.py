@@ -49,17 +49,12 @@ def getCP(app):
     else:
         raise Exception('Unknown application: %s' % app)
 
-def getPTACommand(app, analysis):
+def getPTACommand(app, analysis, main):
     cmd = './run -jre1.6 --cache --color '
     if analysis == 'graph_ci':
         cmd += '-graph '
-    if app in ALLOW_PHANTOM:
-        cmd += '--allow-phantom '
-    if TAMIFLEX.has_key(app):
-        cmd += '-tamiflex %s ' % TAMIFLEX[app]
-    if MAIN.has_key(app):
-        cmd += '-main %s ' % MAIN[app]
-    #cmd += '%s %s ' % (ANALYSIS[analysis], getCP(app))
+    cmd += '--allow-phantom '
+    cmd += '-main %s ' % main 
     cmd += '%s %s ' % (ANALYSIS[analysis], app)
     #cmd += '| tee results/%s-%s.output' % (app, analysis)
     print 'cmd : {}'.format(cmd)
@@ -67,16 +62,19 @@ def getPTACommand(app, analysis):
 
  
 
-def runPTA(pta,app):
+def runPTA(main, pta, app):
   if pta == 'graphick':
-    cmd = getPTACommand(app, 'graph_ci')
+    cmd = getPTACommand(app, 'graph_ci', main)
     os.system(cmd) 
+    print 'cmd : {}'.format(cmd)
     cmd = './query.sh'
     os.system(cmd) 
 
-  cmd = getPTACommand(app, pta)
+  cmd = getPTACommand(app, pta, main)
   os.system(cmd)
-   
+
+
+
 def clean():
   cmd = 'rm -r cache/*'
   os.system(cmd)
@@ -88,10 +86,14 @@ def run(args):
   pta = args[0]
   if args[0] == '-clean':
     clean()
-  else:
-    runPTA(pta,args[1])
+  elif args[1] == '-main':
+    main = args[2]
+    app = args[3]
+    runPTA(main,pta,app)
+  #else:
+  #  runPTANoMain(pta,args[1])
   end = datetime.now()
   print 'taken time: {}'.format(end-start)
-
+#run.py graphick -main Main pgm.jar
 if __name__ == '__main__':
     run(sys.argv[1:])
