@@ -9,3 +9,7 @@ sudo apt install -y openjdk-8-jdk openjdk-8-jre
 sudo apt install -y g++
 
 
+#install python 2.7
+sudo apt install python 
+
+
