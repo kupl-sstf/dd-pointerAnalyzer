@@ -10,7 +10,7 @@ DOOP_CACHE = os.path.join(DOOP_HOME, 'cache')
 
 
 ANALYSIS={
-    '1callSL':'1-call-site-sensitive+heap+SL',
+    '1callH+SL':'1-call-site-sensitive+heap+SL',
     'ci':'context-insensitive',
     'graph_ci':'context-insensitive',
     '2obj':'2-object-sensitive+heap',
