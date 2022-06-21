@@ -98,8 +98,8 @@ Pointer analysis FINISH
 The results say that
 
 - It analyzed the program luindex
-- The analysis 16.30s
-- The results for the clients (#var points-to, #may-fail casts, #call-graph-edges, #reachable-methods, #polymorphic-calls)
+- The analysis took 16.30s
+- The results for the clients (#var points-to, #may-fail casts, #polymorphic-calls, #reachable-methods, #call-graph-edges)
 
 ### Running Doop
 First, move to `doop/` foler. The command below runs Doop:
@@ -112,11 +112,11 @@ $ ./run.py <analysis> -main <Main> <pgm.jar>
 ```
 ci, 2obj, 1callH+SL, graphick.
 ```
-ci and 2obj correspond to the conventional context insensitive and 2-object-sensitive analysis. [1callH+SL](https://dl.acm.org/doi/abs/10.1145/3498720) and [graphick](https://dl.acm.org/doi/10.1145/3428247) correspond to our data-driven analysis heuristics.
+ci and 2obj correspond to the conventional context insensitive and 2-object-sensitive analysis, respectively. [1callH+SL](https://dl.acm.org/doi/abs/10.1145/3498720) and [graphick](https://dl.acm.org/doi/10.1145/3428247) correspond to our data-driven analysis heuristics.
 
 
   
-<pgm.jar> corresponds to the .jar file to be analzed and <Main> corresponds to the main (entry) method. For example, the following command analyzes the program luindex.jar with our data-driven analysis strategy 1callH+SL where the main method of the program is dacapo.luindex.Main:
+<pgm.jar> corresponds to the .jar file to be analzed and <Main> corresponds to the main (entry) class. For example, the following command analyzes the program luindex.jar with our data-driven analysis strategy 1callH+SL where the main class of the program is dacapo.luindex.Main:
 ```
 $ ./run.py 1callH+SL -main dacapo.luindex.Main example_pgms/luindex.jar
 ```
