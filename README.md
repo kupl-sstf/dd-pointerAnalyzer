@@ -101,7 +101,7 @@ The results say that
 - The analysis took 16.30s
 - The results over the clients (#var points-to, #may-fail casts, #polymorphic-calls, #reachable-methods, #call-graph-edges)
 
-### Running Doop
+### Running Pointer Analysis
 First, move to `doop/` foler. The command below runs Doop:
 
 ```
