@@ -59,6 +59,11 @@ sudo dpkg -i pa-datalog_0.5-1bionic.deb
 sudo apt-get install -f
 ```
 
+Install python:
+```sh
+sudo apt install python
+```
+
 Set `JAVA_HOME` to an appropriate path:
 ```sh
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
@@ -76,7 +81,7 @@ Now, you can run our data-driven pointer analyzer. Please follow the [Verifying 
 Verifying installation is easy. First, move to `doop/` folder. Then, you can check the installation by running the following command:
 
 ```
-$ ./run.py ci -main dacapo.luindex.Main example_pgms/luindex.jar
+$ python run.py ci -main dacapo.luindex.Main example_pgms/luindex.jar
 ```
 
 You will see the results as follows:
@@ -105,7 +110,7 @@ The results say that
 First, move to `doop/` foler. The command below runs Doop:
 
 ```
-$ ./run.py <analysis> -main <Main> <pgm.jar>
+$ python run.py <analysis> -main <Main> <pgm.jar>
 ```
 
 <analysis> can be one of the following analyses:
