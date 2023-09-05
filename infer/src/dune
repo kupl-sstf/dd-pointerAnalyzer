@@ -1,0 +1,9 @@
+(library
+ (name Pointer)
+ (public_name infer.Pointer)
+ (flags
+  (:standard -open Core -open IR -open Absint -open IStdlib -open IStd -open ATDGenerated
+    -open IBase -open Backend -open ClangFrontend))
+ (libraries core IStdlib Absint ATDGenerated IBase IR ocamlgraph Backend ClangFrontend)
+ (preprocess
+  (pps ppx_compare)))
